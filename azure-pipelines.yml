@@ -27,3 +27,14 @@ stages:
         dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
+    - task: NeuVectorScan@1
+      inputs:
+        controllerType: 'external'
+        neuvectorController: 'NV controller on 89'
+        containerRegistry: 'lsong docker registry'
+        repository: 'songlongtj/alpine'
+        tag: '3.6'
+        failOnHighSeverityThreshold: true
+        highSeverityThreshold: '10'
+        failOnMediumSeverityThreshold: true
+        mediumSeverityThreshold: '10'
