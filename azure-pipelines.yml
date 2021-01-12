@@ -28,7 +28,7 @@ stages:
         tags: |
           $(tag)
     - task: NeuVectorScan@1
-      displayName: Scan Image with NeuVector
+      displayName: Scan Image with NeuVector-lsong
       inputs:
         controllerType: 'external'
         neuvectorController: 'NV controller on 89'
