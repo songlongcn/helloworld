@@ -42,6 +42,7 @@ stages:
       - script: |
           docker image ls
           docker run --name neuvector.scanner --rm -e SCANNER_REPOSITORY=lsong/lsong -e SCANNER_TAG=1.0 -e SCANNER_LICENSE=$(license) -v /var/run/docker.sock:/var/run/docker.sock -v /var/neuvector:/var/neuvector  neuvector/scanner
+          cat /var/neuvector/scan_result.json
         displayName: show docker
       - task: NeuVectorScan@1
         displayName: Scan Image with NeuVector-lsong
