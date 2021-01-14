@@ -25,6 +25,9 @@ stages:
           echo " $(Build.BuildId) hello world { $(tag) }"
           pwd
         displayName: show build number and current path
+      - powershell: |
+          Get-ChildItem -Path Env:
+        displayName: print Env info
     # - task: Docker@2
     #   displayName: Build an image
     #   inputs:
