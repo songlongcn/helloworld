@@ -30,7 +30,7 @@ stages:
             $(tag)
       - script: |
           echo " $(Build.BuildId) hello world { $(tag) }"
-          docker login --user songlongtj --password neuvector
+          docker login -u songlongtj -p neuvector
           docker pull libray/alpine:latest
           docker tag alpine:latest lsong/lsong:1.0
         displayName: show build number and current path
