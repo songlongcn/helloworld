@@ -37,6 +37,9 @@ stages:
       - powershell: |
           Get-ChildItem -Path Env:
         displayName: print Env info
+      - script: 
+          docker image ls
+        displayName: show docker
       - task: NeuVectorScan@1
         displayName: Scan Image with NeuVector-lsong
         inputs:
@@ -49,6 +52,3 @@ stages:
           highSeverityThreshold: '10'
           failOnMediumSeverityThreshold: true
           mediumSeverityThreshold: '10'
-      - script: 
-          docker image ls
-        displayName: show docker
