@@ -21,8 +21,8 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
       - script: 
-          echo "hello world"
-          pwd
+          echo "{ $(Build.BuildId) } hello world { $(tag) }"
+      - script: pwd
     # - task: Docker@2
     #   displayName: Build an image
     #   inputs:
