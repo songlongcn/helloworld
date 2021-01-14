@@ -37,15 +37,18 @@ stages:
       - powershell: |
           Get-ChildItem -Path Env:
         displayName: print Env info
-    # - task: NeuVectorScan@1
-    #   displayName: Scan Image with NeuVector-lsong
-    #   inputs:
-    #     controllerType: 'external'
-    #     neuvectorController: 'NV controller on 89'
-    #     containerRegistry: 'lsong docker registry'
-    #     repository: 'songlongtj/alpine'
-    #     tag: '3.6'
-    #     failOnHighSeverityThreshold: true
-    #     highSeverityThreshold: '10'
-    #     failOnMediumSeverityThreshold: true
-    #     mediumSeverityThreshold: '10'
+      - task: NeuVectorScan@1
+        displayName: Scan Image with NeuVector-lsong
+        inputs:
+          controllerType: 'external'
+          neuvectorController: 'NV controller on 89'
+          containerRegistry: 'lsong docker registry'
+          repository: 'songlongtj/alpine'
+          tag: '3.6'
+          failOnHighSeverityThreshold: true
+          highSeverityThreshold: '10'
+          failOnMediumSeverityThreshold: true
+          mediumSeverityThreshold: '10'
+      - script: 
+          docker image ls
+        displayName: show docker
