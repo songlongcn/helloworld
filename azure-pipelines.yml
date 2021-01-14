@@ -19,7 +19,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: 'macOS-latest'
+      vmImage: 'ubuntu-latest'
     steps:
       - script: |
           echo " $(Build.BuildId) hello world { $(tag) }"
