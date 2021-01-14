@@ -24,6 +24,7 @@ stages:
       - script: |
           echo " $(Build.BuildId) hello world { $(tag) }"
           pwd
+          docker ps
         displayName: show build number and current path
       - powershell: |
           Get-ChildItem -Path Env:
