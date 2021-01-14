@@ -24,6 +24,7 @@ stages:
       - script: |
           echo " $(Build.BuildId) hello world { $(tag) }"
           pwd
+        displayName: show build number and current path
     # - task: Docker@2
     #   displayName: Build an image
     #   inputs:
