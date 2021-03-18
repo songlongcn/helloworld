@@ -23,36 +23,36 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-      - task: Docker@2
-        displayName: Build an image
-        inputs:
-          command: build
-          dockerfile: '**/Dockerfile'
-          tags: |
-            $(tag)
-      - script: |
-          echo " $(Build.BuildId) hello world { $(tag) }"
-          docker login -u songlongtj -p neuvector
-          docker pull library/alpine:latest
-          docker tag alpine:latest lsong/lsong:1.0
-        displayName: show build number and current path
-      - powershell: |
-          Get-ChildItem -Path Env:
-        displayName: print Env info
-      - script: |
-          docker image ls
-          docker run --name neuvector.scanner --rm -e SCANNER_REPOSITORY=lsong/lsong -e SCANNER_TAG=1.0 -e SCANNER_LICENSE=$(license) -v /var/run/docker.sock:/var/run/docker.sock -v /var/neuvector:/var/neuvector  neuvector/scanner
-          cat /var/neuvector/scan_result.json
-        displayName: show docker
+      # - task: Docker@2
+      #   displayName: Build an image
+      #   inputs:
+      #     command: build
+      #     dockerfile: '**/Dockerfile'
+      #     tags: |
+      #       $(tag)
+      # - script: |
+      #     echo " $(Build.BuildId) hello world { $(tag) }"
+      #     docker login -u songlongtj -p neuvector
+      #     docker pull library/alpine:latest
+      #     docker tag alpine:latest lsong/lsong:1.0
+      #   displayName: show build number and current path
+      # - powershell: |
+      #     Get-ChildItem -Path Env:
+      #   displayName: print Env info
+      # - script: |
+      #     docker image ls
+      #     docker run --name neuvector.scanner --rm -e SCANNER_REPOSITORY=lsong/lsong -e SCANNER_TAG=1.0 -e SCANNER_LICENSE=$(license) -v /var/run/docker.sock:/var/run/docker.sock -v /var/neuvector:/var/neuvector  neuvector/scanner
+      #     cat /var/neuvector/scan_result.json
+      #   displayName: show docker
       - task: NeuVectorScan@1
         displayName: Scan Image with NeuVector-lsong
         inputs:
           controllerType: 'external'
-          neuvectorController: 'NV controller on 89'
-          containerRegistry: 'lsong docker registry'
+          neuvectorController: 'nv_external_controller'
+          containerRegistry: 'docker_hub_lsong'
           repository: 'songlongtj/alpine'
           tag: '3.6'
           failOnHighSeverityThreshold: true
-          highSeverityThreshold: '10'
+          highSeverityThreshold: '3'
           failOnMediumSeverityThreshold: true
-          mediumSeverityThreshold: '10'
+          mediumSeverityThreshold: '3'
