@@ -23,7 +23,7 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-      # - task: Docker@2
+      # - task: Docker@21
       #   displayName: Build an image
       #   inputs:
       #     command: build
