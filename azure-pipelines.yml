@@ -2,8 +2,8 @@
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
-# trigger:
-# - main
+trigger:
+- main
 
 services:
   neuvector: neuvector
@@ -29,7 +29,7 @@ steps:
 resources:
   containers:
   - container: neuvector
-    image: neuvector/controller:3.0.0.b3
+    image: neuvector/controller:2.5.1
     endpoint: 'docker_hub_lsong'
     ports:
       - 18300:18300
