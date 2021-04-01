@@ -17,7 +17,7 @@ steps:
       - task: NeuVectorScan@1
         inputs:
             controllerType: 'local'
-            controllerLicense: '$(nvLicense.secureFile)'
+            controllerLicense: '$(nvLicense.secureFilePath)'
             containerRegistry: 'docker_hub_lsong'
             repository: 'songlongtj/alpine'
             tag: '3.6'
