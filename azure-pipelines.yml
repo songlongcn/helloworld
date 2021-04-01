@@ -29,7 +29,7 @@ steps:
 resources:
   containers:
   - container: neuvector
-    image: neuvector/controller:4.2.0
+    image: neuvector/controller:3.0.0.b3
     endpoint: 'docker_hub_lsong'
     ports:
       - 18300:18300
