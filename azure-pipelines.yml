@@ -5,15 +5,15 @@
 trigger:
 - main
 
-services:
-  neuvector: neuvector
+# services:
+#   neuvector: neuvector
 
-steps:
-      - task: DownloadSecureFile@1
-        name: nvLicense
-        displayName: NV License
-        inputs:
-         secureFile: 'nv_license.txt'
+# steps:
+#       - task: DownloadSecureFile@1
+#         name: nvLicense
+#         displayName: NV License
+#         inputs:
+#          secureFile: 'nv_license.txt'
       # - task: NeuVectorScan@1
       #   inputs:
       #       controllerType: 'local'
