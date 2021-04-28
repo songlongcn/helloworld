@@ -20,5 +20,6 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: ' pwd '
-      # 'docker images';
+    script: |
+      ' pwd '
+      'docker images'
