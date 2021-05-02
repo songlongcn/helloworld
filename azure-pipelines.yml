@@ -22,12 +22,12 @@ steps:
     docker pull alpine:3.6
     docker pull songlongtj/scanner:2.0
     docker images
-    docker run --name neuvector.scanner --rm -e SCANNER_REPOSITORY=alpine -e SCANNER_TAG=3.6 -e SCANNER_LICENSE=$license -v /var/run/docker.sock:/var/run/docker.sock -v $(Pipeline.Workspace):/var/neuvector  songlongtj/scanner:2.0
-    ls $(Pipeline.Workspace)
-    cat $(Pipeline.Workspace)/scan_result.json
   displayName: 'Run a multi-line script'
 
 - task: CmdLine@2
   inputs:
-    script: 'docker images'
+    script: 'docker run --name neuvector.scanner --rm -e SCANNER_REPOSITORY=alpine -e SCANNER_TAG=3.6 -e SCANNER_LICENSE=$license -v /var/run/docker.sock:/var/run/docker.sock -v $(Pipeline.Workspace):/var/neuvector  songlongtj/scanner:2.0'
 
+- script: |
+    ls $(Pipeline.Workspace)
+    cat $(Pipeline.Workspace)/scan_result.json
