@@ -10,8 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NeuVectorScan@2
+- task: NeuVectorScan@1
   inputs:
     scanType: 'standalone'
-    repository: '12'
-    tag: '15'
+    repository: 'abc'
+    tag: 'abb'
