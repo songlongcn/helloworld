@@ -13,5 +13,5 @@ steps:
 - task: NeuVectorScan@2
   inputs:
     scanType: 'standalone'
-    repository: 'test'
-    tag: 't1'
+    repository: '12'
+    tag: '15'
