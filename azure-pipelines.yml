@@ -10,6 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'nvlicense'
 - task: NeuVectorScan@1
   inputs:
     scanType: 'standalone'
