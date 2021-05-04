@@ -22,6 +22,7 @@ steps:
     nvContainerRegistry: 'docker_lsong'
     nvRepository: 'neuvector/scanner'
     nvTag: 'latest'
+    containerRegistry: 'docker_lsong'
     repository: 'alpine'
-    tag: '3.2'
-
+    tag: '3.6'
+    scanLayers: true
