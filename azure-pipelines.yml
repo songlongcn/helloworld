@@ -12,9 +12,10 @@ pool:
 steps:
 - task: NeuVectorScan@1
   inputs:
-    scanType: 'external'
-    neuvectorScanner: 'remote scanner'
-    containerRegistry: 'docker_lsong'
+    scanType: 'standalone'
+    license: '$(Agent.TempDirectory)/neuvector-license.txt'
+    nvContainerRegistry: 'docker_lsong'
+    nvRepository: 'neuvector/scanner'
+    nvTag: 'latest'
     repository: 'alpine'
-    tag: '3.6'
-    scanLayers: true
+    tag: '3.2'
