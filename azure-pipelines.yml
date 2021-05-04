@@ -11,12 +11,14 @@ pool:
 
 steps:
 - task: DownloadSecureFile@1
+  name: neuvectorLicense
+  displayName: Get NV license
   inputs:
-    secureFile: 'nvlicense'
+    secureFile: 'neuvector-license.txt'
 - task: NeuVectorScan@1
   inputs:
     scanType: 'standalone'
-    license: '$(Agent.TempDirectory)/neuvector-license.txt'
+    license: '$(neuvectorLicense.secureFilePath)'
     nvContainerRegistry: 'docker_lsong'
     nvRepository: 'neuvector/scanner'
     nvTag: 'latest'
