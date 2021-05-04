@@ -12,6 +12,9 @@ pool:
 steps:
 - task: NeuVectorScan@1
   inputs:
-    scanType: 'standalone'
-    repository: 'abc'
-    tag: 'abc'
+    scanType: 'external'
+    neuvectorScanner: 'remote scanner'
+    containerRegistry: 'docker_lsong'
+    repository: 'alpine'
+    tag: '3.6'
+    scanLayers: true
