@@ -26,4 +26,4 @@ steps:
     containerRegistry: 'docker_lsong'
     repository: 'alpine'
     tag: '3.6'
-    scanLayers: true
+    scanLayers: false
