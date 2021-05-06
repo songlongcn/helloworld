@@ -22,7 +22,7 @@ steps:
     license: '$(neuvectorLicense.secureFilePath)'
     nvContainerRegistry: 'docker_lsong'
     nvRepository: 'songlongtj/scanner'
-    nvTag: 'latest'
+    nvTag: '2.0'
     containerRegistry: 'docker_lsong'
     repository: 'alpine'
     tag: '3.11'
