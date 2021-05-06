@@ -21,9 +21,7 @@ steps:
     scanType: 'standalone'
     license: '$(neuvectorLicense.secureFilePath)'
     nvContainerRegistry: 'docker_lsong'
-    nvRepository: 'songlongtj/scanner'
-    nvTag: '2.0'
-    containerRegistry: 'docker_lsong'
+    nvRepository: 'neuvector/scanner'
+    nvTag: 'latest'
     repository: 'alpine'
     tag: '3.6'
-    scanLayers: false
