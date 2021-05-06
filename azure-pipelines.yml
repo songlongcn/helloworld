@@ -24,6 +24,6 @@ steps:
     nvRepository: 'songlongtj/scanner'
     nvTag: 'latest'
     containerRegistry: 'docker_lsong'
-    repository: 'library/alpine'
-    tag: '3.6'
+    repository: 'alpine'
+    tag: '3.11'
     scanLayers: true
