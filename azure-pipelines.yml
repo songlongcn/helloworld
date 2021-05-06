@@ -25,5 +25,5 @@ steps:
     nvTag: '2.0'
     containerRegistry: 'docker_lsong'
     repository: 'alpine'
-    tag: '3.11'
+    tag: '3.6'
     scanLayers: true
