@@ -21,6 +21,5 @@ steps:
     scanType: 'external'
     neuvectorScanner: 'remote scanner'
     containerRegistry: 'docker_lsong'
-    repository: 'alpine'
+    repository: 'songlongtj/alpine'
     tag: '3.6'
-    scanLayers: true
