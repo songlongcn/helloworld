@@ -15,14 +15,12 @@ steps:
   displayName: Get NV license
   inputs:
     secureFile: 'neuvector-license.txt'
+
 - task: NeuVectorScan@1
   inputs:
-    scanType: 'standalone'
-    license: '$(neuvectorLicense.secureFilePath)'
-    nvContainerRegistry: 'docker_lsong'
-    nvRepository: 'songlongtj/scanner'
-    nvTag: 'latest'
+    scanType: 'external'
+    neuvectorScanner: 'remote scanner'
     containerRegistry: 'docker_lsong'
-    repository: 'library/alpine'
+    repository: 'alpine'
     tag: '3.6'
     scanLayers: true
