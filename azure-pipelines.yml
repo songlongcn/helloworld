@@ -27,3 +27,6 @@ steps:
     repository: 'songlongtj/msong'
     tag: '1.0'
     scanLayers: true
+    cveBlacklist: 
+
+
