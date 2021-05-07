@@ -22,7 +22,7 @@ steps:
     license: '$(neuvectorLicense.secureFilePath)'
     nvContainerRegistry: 'docker_lsong'
     nvRepository: 'songlongtj/scanner'
-    nvTag: 'latest'
+    nvTag: '2.0'
     repository: 'debian'
     tag: '9'
     scanLayers: true
