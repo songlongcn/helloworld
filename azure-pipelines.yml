@@ -23,8 +23,7 @@ steps:
     nvContainerRegistry: 'docker_lsong'
     nvRepository: 'songlongtj/scanner'
     nvTag: '2.0'
-    containerRegistryStandalone: 'docker_lsong'
-    repository: 'songlongtj/msong'
-    tag: '1.0'
+    repository: 'debian'
+    tag: '9'
     scanLayers: true
 
