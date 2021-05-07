@@ -18,13 +18,10 @@ steps:
 
 - task: NeuVectorScan@1
   inputs:
-    scanType: 'standalone'
-    license: '$(neuvectorLicense.secureFilePath)'
-    nvContainerRegistry: 'docker_lsong'
-    nvRepository: 'songlongtj/scanner'
-    nvTag: '2.0'
-    repository: 'debian'
-    tag: '10'
+    scanType: 'external'
+    neuvectorScanner: 'remote scanner'
+    containerRegistryExternal: 'docker_lsong'
+    repository: 'songlongtj/msong'
+    tag: '1.0'
     scanLayers: true
-
 
